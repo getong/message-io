@@ -336,6 +336,8 @@ fn message_size(transport: Transport, message_size: usize) {
     });
 }
 
+#[cfg(target_os = "macos")]
+#[ignore = "macos requires to enable permission for multicast"]
 #[test]
 fn multicast_reuse_addr() {
     //util::init_logger(LogThread::Disabled); // Enable it for better debugging
